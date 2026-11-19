@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<!-- saved from url=(0083)file:///C:/Users/COMPUTER/OneDrive/Desktop/proyecto%20jose%20luis/uno%20proyec.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brilla&amp;Comparte</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(
+                135deg,
+                #d8c5ff,
+                #ffe0f1,
+                #c9eaff
+            );
+            min-height: 100vh;
+        }
+
+        /* BARRA DE NAVEGACIÓN */
+        nav {
+            background: linear-gradient(
+                to right,
+                #7956bd,
+                #a47ad5
+            );
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 3px 10px #77777740;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            font-size: 30px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffe0f1;
+        }
+
+        /* CONTENIDO PRINCIPAL */
+        .principal {
+            min-height: 85vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 50px 7%;
+            gap: 30px;
+            background:
+                radial-gradient(circle at 5% 10%, #c9eaff 0, transparent 23%),
+                radial-gradient(circle at 95% 90%, #f8bce6 0, transparent 25%),
+                linear-gradient(120deg, #fff0fa, #e9e1ff, #e1f4ff);
+        }
+
+        /* TEXTO */
+        .contenido {
+            max-width: 550px;
+        }
+
+        .contenido h1 {
+            color: #44217e;
+            font-size: 53px;
+            line-height: 1.15;
+            margin-bottom: 25px;
+            font-family: Georgia, serif;
+        }
+
+        .contenido p {
+            color: #51466e;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* BOTÓN */
+        .boton {
+            display: inline-block;
+            background: linear-gradient(
+                90deg,
+                #8060c9,
+                #a47cdb
+            );
+            color: white;
+            padding: 17px 40px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-size: 20px;
+            box-shadow: 0 5px 12px #7553a655;
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            background: #6843a9;
+            transform: translateY(-4px);
+        }
+
+        /* DIBUJOS */
+.ilustracion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    min-width: 300px;
+}
+
+.estrella {
+    width: 300px;
+    height: 300px;
+    filter: drop-shadow(4px 7px 8px #c69a45);
+    animation: flotar 3s infinite ease-in-out;
+}
+
+.flor {
+    width: 265px;
+    height: 265px;
+    margin-top: -15px;
+    filter: drop-shadow(3px 6px 7px #d88bb8);
+    animation: flotar 3s infinite ease-in-out;
+}
+
+        /* RESPONSIVE */
+        @media (max-width: 750px) {
+            nav {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .principal {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 20px;
+            }
+
+            .contenido h1 {
+                font-size: 38px;
+            }
+
+            .ilustracion {
+                min-width: auto;
+            }
+        }
+        /* PETALOS CAYENDO */
+.petalo {
+    position: fixed;
+    top: -50px;
+    z-index: 1000;
+    pointer-events: none;
+    font-size: 43px;
+    animation: caer linear infinite;
+}
+
+@keyframes caer {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+/* ESTRELLITAS CAYENDO */
+.estrellita {
+    position: fixed;
+    top: -40px;
+    z-index: 1000;
+    pointer-events: none;
+    color: #ffbb00;
+    font-size: 42px;
+    text-shadow: 0 0 8px #ffc800;
+    animation: caerEstrella linear infinite;
+}
+
+@keyframes caerEstrella {
+    0% {
+        transform: translateY(-40px) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+body {
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #fce4f3, #e8dcff, #dff5ff);
+}
+
+nav, .principal {
+    border-radius: 20px;
+}
+
+.principal {
+    border: 3px solid #e8b9e8;
+    box-shadow: 0 0 15px rgba(174, 126, 201, 0.25);
+    margin: 15px;
+}
+    </style>
+</head>
+
+<body>
+    <!-- ESTRELLITAS DECORATIVAS -->
+<div class="estrellita" style="left: 8%; animation-duration: 9s;">✦</div>
+<div class="estrellita" style="left: 20%; animation-duration: 12s; animation-delay: 3s;">★</div>
+<div class="estrellita" style="left: 38%; animation-duration: 10s; animation-delay: 1s;">✧</div>
+<div class="estrellita" style="left: 50%; animation-duration: 11s; animation-delay: 4s;">✦</div>
+<div class="estrellita" style="left: 68%; animation-duration: 9s; animation-delay: 2s;">★</div>
+<div class="estrellita" style="left: 82%; animation-duration: 13s; animation-delay: 5s;">✧</div>
+<div class="estrellita" style="left: 95%; animation-duration: 10s; animation-delay: 2s;">✦</div>
+    <!-- PETALOS DECORATIVOS -->
+<div class="petalo" style="left: 5%; animation-duration: 8s;">🌸</div>
+<div class="petalo" style="left: 15%; animation-duration: 11s; animation-delay: 2s;">🌷</div>
+<div class="petalo" style="left: 25%; animation-duration: 9s; animation-delay: 4s;">🌸</div>
+<div class="petalo" style="left: 35%; animation-duration: 12s; animation-delay: 1s;">🌷</div>
+<div class="petalo" style="left: 45%; animation-duration: 10s; animation-delay: 3s;">🌸</div>
+<div class="petalo" style="left: 55%; animation-duration: 8s; animation-delay: 5s;">🌷</div>
+<div class="petalo" style="left: 65%; animation-duration: 11s; animation-delay: 2s;">🌸</div>
+<div class="petalo" style="left: 75%; animation-duration: 9s; animation-delay: 4s;">🌷</div>
+<div class="petalo" style="left: 85%; animation-duration: 12s; animation-delay: 1s;">🌸</div>
+<div class="petalo" style="left: 95%; animation-duration: 10s; animation-delay: 3s;">🌷</div>
+
+    <nav>
+        <div class="logo">
+            <span>⭐🌸</span> Brilla&amp;Comparte
+        </div>
+
+        <ul>
+            <li><a href="file:///C:/Users/COMPUTER/OneDrive/Desktop/proyecto%20jose%20luis/inicio.html">Inicio</a></li>
+            <li><a href="file:///C:/Users/COMPUTER/OneDrive/Desktop/proyecto%20jose%20luis/preguntas.html">Preguntas</a></li>
+            <li><a href="file:///C:/Users/COMPUTER/OneDrive/Desktop/proyecto%20jose%20luis/anecdotas.html">Anécdotas</a></li>
+            <li><a href="file:///C:/Users/COMPUTER/OneDrive/Desktop/proyecto%20jose%20luis/nosotros.html">Sobre nosotros</a></li>
+        </ul>
+    </nav>
+
+    <section class="principal">
+
+        <div class="contenido">
+
+            <h1>
+                Cada pregunta
+                es una estrella,
+                cada anécdota
+                es una flor.
+            </h1>
+
+            <p>
+                Comparte tus preguntas y anécdotas,
+                y descubre historias y opiniones de
+                otras personas. Aquí todos tenemos
+                algo que contar.
+            </p>
+
+            <a href="Brilla&Comparte 2.html" class="boton">
+                Comenzar ➜
+            </a>
+
+        </div>
+
+        <div class="ilustracion">
+
+    <!-- ESTRELLA -->
+    <svg class="estrella" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <lineargradient id="oro" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#fff5a8"></stop>
+                <stop offset="50%" stop-color="#ffd34f"></stop>
+                <stop offset="100%" stop-color="#f5a623"></stop>
+            </lineargradient>
+        </defs>
+
+        <path d="M100 8 L123 70 L190 75 L139 119
+                 L155 185 L100 149 L45 185 L61 119
+                 L10 75 L77 70 Z" fill="url(#oro)" stroke="#e6a52b" stroke-width="4" stroke-linejoin="round"></path>
+
+        <circle cx="75" cy="75" r="5" fill="white"></circle>
+        <path d="M112 48 L116 60 L128 64 L116 68 L112 80
+                 L108 68 L96 64 L108 60 Z" fill="white"></path>
+    </svg>
+
+    <!-- FLOR -->
+    <svg class="flor" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+
+        <defs>
+            <radialgradient id="rosa" cx="50%" cy="30%">
+                <stop offset="0%" stop-color="#fff0f8"></stop>
+                <stop offset="100%" stop-color="#ed8fc4"></stop>
+            </radialgradient>
+        </defs>
+
+        <g fill="url(#rosa)" stroke="#df79b1" stroke-width="2">
+            <ellipse cx="100" cy="48" rx="28" ry="43"></ellipse>
+            <ellipse cx="100" cy="48" rx="28" ry="43" transform="rotate(72 100 100)"></ellipse>
+            <ellipse cx="100" cy="48" rx="28" ry="43" transform="rotate(144 100 100)"></ellipse>
+            <ellipse cx="100" cy="48" rx="28" ry="43" transform="rotate(216 100 100)"></ellipse>
+            <ellipse cx="100" cy="48" rx="28" ry="43" transform="rotate(288 100 100)"></ellipse>
+        </g>
+
+        <circle cx="100" cy="100" r="25" fill="#ffd76a" stroke="#eeb64c" stroke-width="3"></circle>
+
+        <circle cx="91" cy="93" r="4" fill="#fff4c4"></circle>
+    </svg>
+
+</div>
+
+    </section>
+
+
+</body></html>

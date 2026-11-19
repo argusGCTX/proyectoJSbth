@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background: linear-gradient(
+        120deg,
+        #e1f2ff,
+        #f8e3ff,
+        #ffe2f3
+    );
+    padding: 20px;
+    color: #401879;
+}
+
+/* BARRA SUPERIOR */
+
+.navbar {
+    background: linear-gradient(90deg, #9162d5, #bd83d9);
+    padding: 18px 35px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    box-shadow: 0 4px 12px #c9a5e6;
+    margin-bottom: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+}
+
+.logo h2 {
+    font-size: 23px;
+}
+
+.simbolos {
+    font-size: 30px;
+}
+
+.flor-logo {
+    font-size: 40px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #ffe1f3;
+    transform: translateY(-3px);
+}
+
+.menu span {
+    font-size: 25px;
+    color: #35145e;
+}
+
+
+/* CONTENEDOR PRINCIPAL */
+
+.contenedor {
+    min-height: 780px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #d5a4ed;
+    border-radius: 25px;
+    background: linear-gradient(
+        120deg,
+        #d9efff,
+        #fff0fa,
+        #f9dff5
+    );
+    padding: 45px 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px #d9bce8;
+}
+
+
+/* TÍTULOS */
+
+.titulo {
+    font-family: Georgia, serif;
+    font-size: 75px;
+    color: #40147c;
+    margin: 5px 0 20px;
+    text-shadow: 2px 2px 3px #e5c5ff;
+}
+
+.subtitulo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #51228c;
+    margin-bottom: 65px;
+}
+
+
+/* CATEGORÍAS */
+
+.categorias {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* TARJETAS */
+
+.tarjeta {
+    width: 310px;
+    min-height: 365px;
+    border-radius: 35px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-8px);
+}
+
+
+/* TARJETA CELESTE */
+
+.curiosidades {
+    background: linear-gradient(
+        135deg,
+        #e0efff,
+        #cfe2ff
+    );
+    border: 3px solid #a5c8f7;
+    box-shadow: 0 5px 12px #c4dafa;
+}
+
+
+/* TARJETA ROSADA */
+
+.consejos {
+    background: linear-gradient(
+        135deg,
+        #ffe3f4,
+        #ffd1ed
+    );
+    border: 3px solid #f1a2d9;
+    box-shadow: 0 5px 12px #efc3e4;
+}
+
+
+/* TARJETA LILA */
+
+.opiniones {
+    background: linear-gradient(
+        135deg,
+        #eee0ff,
+        #dfc9ff
+    );
+    border: 3px solid #c5a0f1;
+    box-shadow: 0 5px 12px #d4b9ed;
+}
+
+
+/* DIBUJOS */
+
+.dibujo {
+    font-size: 90px;
+    margin: 10px 0;
+    filter: drop-shadow(2px 3px 3px #d9a8df);
+}
+
+
+/* TÍTULOS DE TARJETAS */
+
+.tarjeta h2 {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    color: #48177f;
+    margin: 10px 0;
+}
+
+
+/* DESCRIPCIONES */
+
+.tarjeta p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #47247b;
+    margin: 10px 0 20px;
+}
+
+
+/* BOTONES */
+
+.boton {
+    display: inline-block;
+    background: linear-gradient(
+        90deg,
+        #8150c9,
+        #a47add
+    );
+    color: white;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 40px;
+    font-size: 19px;
+    font-weight: bold;
+    box-shadow: 0 5px 10px #c7a1e9;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    transform: scale(1.08);
+    background: #7040b5;
+}
+
+
+/* DECORACIONES */
+
+.decoracion {
+    position: absolute;
+    z-index: 1;
+}
+
+.estrella1 {
+    top: 50px;
+    left: 4%;
+    font-size: 45px;
+}
+
+.estrella2 {
+    top: 35px;
+    right: 7%;
+    font-size: 40px;
+}
+
+.estrella3 {
+    bottom: 25%;
+    left: 3%;
+    font-size: 45px;
+}
+
+.estrella4 {
+    bottom: 12%;
+    right: 8%;
+    font-size: 45px;
+}
+
+.tulipan1 {
+    top: 30%;
+    left: 3%;
+    font-size: 70px;
+}
+
+.tulipan2 {
+    top: 28%;
+    right: 3%;
+    font-size: 70px;
+}
+
+.tulipan3 {
+    bottom: 12%;
+    left: 5%;
+    font-size: 65px;
+}
+
+.flor1 {
+    top: 7%;
+    right: 15%;
+    font-size: 55px;
+}
+
+.flor2 {
+    bottom: 20%;
+    right: 8%;
+    font-size: 55px;
+}
+
+
+/* ESTRELLA GRANDE */
+
+.estrella-grande {
+    position: absolute;
+    bottom: -65px;
+    right: -30px;
+    font-size: 180px;
+    opacity: 0.55;
+    z-index: 1;
+}
+
+
+/* NUBES */
+
+.nube {
+    position: absolute;
+    width: 180px;
+    height: 65px;
+    background: #e9caff;
+    border-radius: 50px;
+    opacity: 0.65;
+    bottom: -35px;
+    z-index: 0;
+}
+
+.nube::before,
+.nube::after {
+    content: "";
+    position: absolute;
+    background: #e9caff;
+    border-radius: 50%;
+}
+
+.nube::before {
+    width: 95px;
+    height: 95px;
+    top: -40px;
+    left: 20px;
+}
+
+.nube::after {
+    width: 75px;
+    height: 75px;
+    top: -25px;
+    left: 85px;
+}
+
+.nube1 {
+    left: -30px;
+}
+
+.nube2 {
+    right: -30px;
+    background: #f5c8ec;
+}
+
+.nube2::before,
+.nube2::after {
+    background: #f5c8ec;
+}
+
+
+/* ADAPTACIÓN A CELULARES */
+
+@media (max-width: 750px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .navbar {
+        justify-content: center;
+        padding: 15px;
+    }
+
+    .menu {
+        justify-content: center;
+        gap: 12px;
+        font-size: 13px;
+    }
+
+    .titulo {
+        font-size: 45px;
+    }
+
+    .subtitulo {
+        font-size: 20px;
+        margin-bottom: 35px;
+    }
+
+    .categorias {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarjeta {
+        width: 95%;
+        min-height: 340px;
+    }
+
+    .dibujo {
+        font-size: 75px;
+    }
+
+    .tarjeta h2 {
+        font-size: 25px;
+    }
+
+    .tarjeta p {
+        font-size: 17px;
+    }
+
+    .estrella-grande {
+        font-size: 100px;
+    }
+}
+/* PETALOS CAYENDO */
+.petalo {
+    position: fixed;
+    top: -50px;
+    z-index: 1000;
+    pointer-events: none;
+    font-size: 23px;
+    animation: caer linear infinite;
+}
+
+@keyframes caer {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+/* ESTRELLITAS CAYENDO */
+.estrellita {
+    position: fixed;
+    top: -40px;
+    z-index: 1000;
+    pointer-events: none;
+    color: #ffbb00;
+    font-size: 22px;
+    text-shadow: 0 0 8px #ffc800;
+    animation: caerEstrella linear infinite;
+}
+
+@keyframes caerEstrella {
+    0% {
+        transform: translateY(-40px) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Preguntas | Brilla&Comparte</title>
+
+    <link rel="stylesheet" href="preguntas.css">
+</head>
+
+<body>
+<!-- PETALOS DECORATIVOS -->
+<div class="petalo" style="left: 5%; animation-duration: 8s;">🌸</div>
+<div class="petalo" style="left: 15%; animation-duration: 11s; animation-delay: 2s;">🌷</div>
+<div class="petalo" style="left: 25%; animation-duration: 9s; animation-delay: 4s;">🌸</div>
+<div class="petalo" style="left: 35%; animation-duration: 12s; animation-delay: 1s;">🌷</div>
+<div class="petalo" style="left: 45%; animation-duration: 10s; animation-delay: 3s;">🌸</div>
+<div class="petalo" style="left: 55%; animation-duration: 8s; animation-delay: 5s;">🌷</div>
+<div class="petalo" style="left: 65%; animation-duration: 11s; animation-delay: 2s;">🌸</div>
+<div class="petalo" style="left: 75%; animation-duration: 9s; animation-delay: 4s;">🌷</div>
+<div class="petalo" style="left: 85%; animation-duration: 12s; animation-delay: 1s;">🌸</div>
+<div class="petalo" style="left: 95%; animation-duration: 10s; animation-delay: 3s;">🌷</div>
+<!-- ESTRELLITAS DECORATIVAS -->
+<div class="estrellita" style="left: 8%; animation-duration: 9s;">✦</div>
+<div class="estrellita" style="left: 20%; animation-duration: 12s; animation-delay: 3s;">★</div>
+<div class="estrellita" style="left: 38%; animation-duration: 10s; animation-delay: 1s;">✧</div>
+<div class="estrellita" style="left: 50%; animation-duration: 11s; animation-delay: 4s;">✦</div>
+<div class="estrellita" style="left: 68%; animation-duration: 9s; animation-delay: 2s;">★</div>
+<div class="estrellita" style="left: 82%; animation-duration: 13s; animation-delay: 5s;">✧</div>
+<div class="estrellita" style="left: 95%; animation-duration: 10s; animation-delay: 2s;">✦</div>
+    <!-- BARRA DE NAVEGACIÓN -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <span class="simbolos">⭐ 🌸</span>
+            <h2>Brilla&Comparte</h2>
+            <span class="flor-logo"></span>
+        </div>
+
+        <div class="menu">
+            <a href="1inicio.html">Inicio</a>
+            <a href="3B)preguntas.html">Preguntas</a>
+            <a href="3A)anecdotas (1).html">Anécdotas</a>
+            <a href="2explicacion (1).html">Sobre nosotros</a>
+            <span>♙</span>
+        </div>
+
+    </nav>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+
+    <main class="contenedor">
+
+        <!-- DECORACIONES -->
+
+        <span class="decoracion estrella1">⭐</span>
+        <span class="decoracion estrella2">✨</span>
+        <span class="decoracion estrella3">⭐</span>
+        <span class="decoracion estrella4">✨</span>
+
+        <span class="decoracion tulipan1">🌷</span>
+        <span class="decoracion tulipan2">🌷</span>
+        <span class="decoracion tulipan3">🌷</span>
+
+        <span class="decoracion flor1">🌸</span>
+        <span class="decoracion flor2">🌼</span>
+
+
+        <!-- TÍTULOS -->
+
+        <h1 class="titulo">Preguntas</h1>
+
+        <p class="subtitulo">
+            ¡Elige una categoría! 💜
+        </p>
+
+
+        <!-- CATEGORÍAS -->
+
+        <section class="categorias">
+
+            <div class="tarjeta curiosidades">
+
+                <div class="dibujo">💡</div>
+
+                <h2>Curiosidades</h2>
+
+                <p>
+                    Comparte preguntas interesantes
+                    y descubre cosas nuevas.
+                </p>
+
+                <a href="curiosidades.html" class="boton">
+                    Explorar →
+                </a>
+
+            </div>
+
+
+            <div class="tarjeta consejos">
+
+                <div class="dibujo">💗</div>
+
+                <h2>Consejos</h2>
+
+                <p>
+                    Pregunta lo que quieras
+                    y recibe opiniones de otras personas.
+                </p>
+
+                <a href="consejos.html" class="boton">
+                    Explorar →
+                </a>
+
+            </div>
+
+
+            <div class="tarjeta opiniones">
+
+                <div class="dibujo">⭐</div>
+
+                <h2>Opiniones</h2>
+
+                <p>
+                    Comparte tus ideas y conoce
+                    diferentes puntos de vista.
+                </p>
+
+                <a href="opiniones.html" class="boton">
+                    Explorar →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- DECORACIONES INFERIORES -->
+
+        <div class="nube nube1"></div>
+        <div class="nube nube2"></div>
+
+        <div class="estrella-grande">⭐</div>
+
+    </main>
+
+</body>
+</html>
